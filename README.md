@@ -1,8 +1,8 @@
-# Watchguard Cytomic Orion & EDR Things
+# Watchguard Cytomic Orion & EDR things
 
 
 This is not an offical repository of Watchguard or Cytomic.<br>
-It's only some collection of HowTo's and EDR related Stuff.
+It will cover some MISP, Watchguard, Cytomic and EDR HowTos, stuff and detection rules.
 
 
 1. [Install MISP and Connect to Cytomic Orion](misp/Install_misp_cytomic_orion.md)
