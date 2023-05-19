@@ -187,7 +187,7 @@ we will officially deprecate python versions below 3.10 on January 1st 2024.
 Received access token
 ```
 Received access token means you sucessfully authenticated to the Cytomic API. Calling the 
-script without any parameters won't do anything (no up/download) - good for testing.
+script --events would upload your events - but if no event has the tag "upload" it won't do anything.
 
 ___
 
