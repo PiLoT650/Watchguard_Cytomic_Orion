@@ -17,11 +17,12 @@ in Cytomic Orion. This is partially WIP.
 | Install MISP                 	| works                 	|
 | Connect Orion                	| works 	|
 | Upload IOCs to Orion                	| works 	|
-| Right IOC TTLDays to Orion           	| works - see Change cytomic_orion.oy for right TTLDays	|
+| Right IOC TTLDays to Orion           	| works - see Change cytomic_orion.py for right TTLDays	|
 | Get notified if ioc is found               	| works  	|
 | Delete IOCs from MISP in Orion                	| not working 	|
 | Check which feeds to use                	| Todo 	|
 | Cron for fetching feeds                	| Todo 	|
+| Tag uploaded events as "uploaded"                	| Todo 	|
 | Tag and publish Events automatically                	| Todo 	|
 
 
