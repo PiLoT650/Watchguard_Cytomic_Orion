@@ -247,7 +247,7 @@ Cause of this the TTL value is set to 0 in Orion - which will make the IOC inact
 
 ![Orion ioc result](pics/orionioc.png)<br>
 
-**NOTICE: ** the script automatically untags your event - if you ever want to upload the event again, you have to retag it with cytomic-upload again!
+**NOTICE:** the script automatically untags your event - if you ever want to upload the event again, you have to retag it with cytomic-upload again!
 ___
 
 ## Change cytomic_orion.py for right TTLDays
@@ -280,7 +280,7 @@ If you change these lines - **republish** your event and start the script again,
 ___
 
 
-#Todos
+# Todos
 ## Delete IOCs from MISP in Orion
 This should work - but unfortunately i could not get this running - have to have a closer look to this.
 ## cytomic_orion.py
