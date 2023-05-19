@@ -218,7 +218,7 @@ ___
 
 ## Upload IOCs from MISP to Cytomic IOC
 
-Now we can upload the created event with this two attributes. After this both will be IOSs on Orion.
+Now we can upload the created event with this two attributes. After this both will be IOCs on Orion.
 
 1. Menu > **Event Actions** > **List Events** > select your ID of the event you just added
 2. Table > **Tags** add the cytomic upload tag and submit
@@ -247,10 +247,10 @@ Cause of this the TTL value is set to 0 in Orion - which will make the IOC inact
 
 ![Orion ioc result](pics/orionioc.png)<br>
 
-**NOTICE** the script automatically untags your event - if you ever want to upload the event again, you have to retag it with cytomic-upload again!
+**NOTICE: ** the script automatically untags your event - if you ever want to upload the event again, you have to retag it with cytomic-upload again!
 ___
 
-## Change cytomic_orion.oy for right TTLDays
+## Change cytomic_orion.py for right TTLDays
 
 Change TTLdays in cytomic_orion.py
 As mentioned above - if you change these two lines and run again - it should update the ttlDays.
@@ -279,11 +279,12 @@ cytomicobj.post_data.append({cytomicobj.attlabel_cytomic: post_value, 'Additiona
 If you change these lines - **republish** your event and start the script again, the ttlDays should be updated in Orion.
 ___
 
+
+#Todos
 ## Delete IOCs from MISP in Orion
-
 This should work - but unfortunately i could not get this running - have to have a closer look to this.
-
-
+## cytomic_orion.py
+Todo - check --upload and --delete.
 ## Activate Streams
 
 
