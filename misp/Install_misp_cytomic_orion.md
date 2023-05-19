@@ -1,16 +1,16 @@
 # Install MISP Server and connect to Watchguard Cytomic Orion EDR
 This is a step by step tutorial to get startet with MISP and Cytomic Orion.<br>
 Based on this [Post](https://www.vanimpe.eu/2020/03/10/integrating-misp-and-cytomic-orion/)
-which made this possible - Thank you!<br>
+which made this possible - Thank you!<br><br>
 There are also more Infos for MISP on [vanimpe.eu](https://www.vanimpe.eu/?s=misp&submit=Search).
-Focus of these Infos are only to get a MISP Server running and connect it to Cytomic Orion; not<br>
-how to secure the installation of misp or general security related things. There are also
-some Infos<br> about hardening on the install script pages.
+Focus of these Infos are only to get a MISP Server running<br>
+and connect it to Cytomic Orion; not how to secure the installation of misp or general security related things.<br>
+There are also some Infos about hardening on the install script pages.
 
 # Main goal & Status
 Main goal of this is to get all relevant IOC data summarized via external feeds into misp and
-upload these ioc's to cytomic orion - so if - an indicator matches you'll get an notfication and incident 
-in Cytomic Orion. This is partially WIP.
+upload these IOC's to<br> Cytomic Orion - so if - an indicator matches you'll get an notfication and incident 
+from Cytomic Orion. 
 
 | Info                                                    	| Status                 	|
 |---------------------------------------------------------	|--------------------------	|
@@ -58,7 +58,7 @@ ___
 
 ### Enable Cytomic Taxonomy
 
-1. Menu **Event Actions** > **List Taxonomies** > Left side **Update Taxonomies**
+1. Menu **Event Actions** > **List Taxonomies** > left side **Update Taxonomies**
 2. Menu **List Taxonomies** > right side search for **cytomic**
 3. Enable via "play" Button
 ![Optional Text](pics/238928418-38a70d52-43e1-4862-9069-82cd57918bc8-2.png)
@@ -67,7 +67,7 @@ ___
 
 5. Double click on the item - check if both items are active.<br>
    These Tags are later used to mark an attribute or event for uploading oder deleting from Orion IOCs.<br>
-   (Items/Events with TAG "upload" are sent to Cytomic IOCs | TAG "delete" are deleted from Cytomic - via cytomic_orion.py)<br>
+   (Items/Events with TAG "upload" are sent to Cytomic IOC's | TAG "delete" are deleted from Cytomic - via cytomic_orion.py)<br>
 ![Optional Text](pics/238929381-2692a3aa-0bb0-48a6-aef4-ab3a0b191948.png)
 
 ___
@@ -75,7 +75,7 @@ ___
 ### Create ORION API User / AUTH
 
 For the sync between MISP and Orion you need some API credentials from Cytomic Orion.
-You can add these in Orion under **Settings** > **Autorized applications**
+You can add these in Orion<br> under **Settings** > **Autorized applications**<br><br>
 
 ![Optional Text](pics/238957192-e2354513-0272-4a8d-a3af-8829f3d21940.png)
 
@@ -83,9 +83,11 @@ You can add these in Orion under **Settings** > **Autorized applications**
 
 ___
 
+<br>
+
 ### Enable Cytomic MISP Modul
 These are the variables later used for the enrichment part as also for the **cytomic_orion.py** script
-which is responsible for uploading/deleting events from MISP to Cytomic Orion.
+which is<br> responsible for uploading/deleting events from MISP to Cytomic Orion.
 
 1. Menu **Administration** > **Server Settings & Maintenance**
 2. Top Menu > **Plugin**
@@ -94,8 +96,9 @@ which is responsible for uploading/deleting events from MISP to Cytomic Orion.
 
 ![Optional Text](pics/238958789-6e219ec1-2d88-4535-b3d5-1a611589432e.png)
 
-
+<br>
 Whilst using Watchguard Cytomic Orion - these are working examples:
+<br>
 
 | Field                                                    	| Value                 	|
 |---------------------------------------------------------	|--------------------------	|
@@ -115,12 +118,13 @@ Whilst using Watchguard Cytomic Orion - these are working examples:
 | Plugin.Enrichment_cytomic_orion_limit_upload_events     	| 100 (INT MAX limit event upload)                      	|
 | Plugin.Enrichment_cytomic_orion_limit_upload_attributes 	| 100 (INT MAX limit attribut upload)                      	|	
 
+<br>
 ___
 
-
+<br><br>
 ### Create MISP-Server AUTH KEY ###
 Later for **cytomic_orion.py** script to work - you need an **Authentication Key** which has to be set<br>
-in the keys.py file - Infos where to put the key see **keys file - example folder**
+in the keys.py file - Infos where to put the key see **keys file - example folder**.<br>
 Both files are located at: `/var/www/MISP/PyMISP/examples`
 
 1. Menu > **Administration** > **List Auth Keys**
@@ -133,10 +137,9 @@ Both files are located at: `/var/www/MISP/PyMISP/examples`
 
 ___
 
-### keys file - example folder ###
+### keys file - example folder
 To upload or delete files to Orion - we are using the **cytomic_orion.py** script which is located here:
-`var/www/MISP/PyMISP/examples` - if you run this script without getting the **keys** file right,<br>
-you will see this error message:
+`var/www/MISP/PyMISP/examples` - if you run this script without getting the **keys** file right, you will see this error message:
 
 ```
 traceback (most recent call last):
@@ -159,7 +162,7 @@ In `var/www/MISP/PyMISP/examples` folder:
 
 ___
 
-### PYMISP ###
+### PYMISP
 
 For me to fully work and call cytomic_orion.py without errors i had to also install **pymisp**<br>
 via pip3 - if you see this Errormessage after running the script:
@@ -211,7 +214,7 @@ ___
 **Notice:** The enrichment only works for **md5 values**!
 ![Add enrichment](pics/addenrich.png)<br>
 
-8. See the results from your dataset. You'll get back fileinfos - if present and knwon in your Orion dataset<br>
+8. See the results from your dataset. You'll get back fileinfos - if present and known in your Orion dataset<br>
 like here the filename for this md5 hash. Second thing is you're getting back all machines this file was seen on.
 ![Result of enrichment](pics/enrichresult.png)<br>
 
@@ -219,7 +222,7 @@ ___
 
 ## Upload IOCs from MISP to Cytomic IOC
 
-Now we can upload the created event with this two attributes. After this both will be IOCs on Orion.
+Now we can upload the created event with this two attributes. After this both will be IOCs on Orion. (Enrichment and or Upload are independent!)
 
 1. Menu > **Event Actions** > **List Events** > select your ID of the event you just added
 2. Table > **Tags** add the cytomic upload tag and submit
@@ -239,7 +242,7 @@ RESULT: {'httpStatusCode': 200, 'success': True, 'message': 'iocs: 1 DomainIoc a
 Event: 2 hashs: 1 | domains: 1 (event untagged)
 ```
 
-7. Check if you can see the IOCs in Orion **Settings** > **IOCs** <br>
+7. Check if you can see the IOC's in Orion **Settings** > **IOCs** <br>
 **NOTICE** there is this **ttlDays** value from above which should be responsible how long the IOC<br>
 should be valid and alert you if found - but in this case - it seems the script does not use<br>
 the right api call to set this value. It tries to set it via a GET/POST `cytomicobj.atttype_cytomic + '?ttlDays='`
@@ -277,9 +280,10 @@ To
 cytomicobj.post_data.append({cytomicobj.attlabel_cytomic: post_value, 'AdditionalData': '{} {}'.format(cytomicobj.atttype_misp, attribute['comment']).strip(),'DaysToExpiration': str(moduleconfig['upload_ttlDays']), 'Source': 'Uploaded from MISP', 'Policy': moduleconfig['cytomic_policy'], 'Description': '{} - {}'.format(event_id, event_title).strip()})
 </pre>
 
-If you change these lines - **republish** your event and start the script again, the ttlDays should be updated in Orion.
+**NOTICE:** If you change these lines - **republish** your event and start the script again, the ttlDays should be updated in Orion<br>
+and also any further upload should have the right TTL.
 ___
-
+<br><br>
 
 # Todos
 ## Delete IOCs from MISP in Orion
