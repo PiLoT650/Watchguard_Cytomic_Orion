@@ -42,6 +42,10 @@ First of all install MISP - here are some Installscripts for many supported<br>
 Distros: [MISP Install Scripts](https://misp.github.io/MISP/). 
 I went straight forward with Ubuntu 20.04 LTS.
 
+**NOTICE** This guide assumes a user name of **misp** with sudo working - so you have to create
+this user first and grant sudo rights.
+
+
 ___
 
 ## Configure MISP for Cytomic
