@@ -35,6 +35,7 @@ from Cytomic Orion.
 * PYMISP Documentation [Link](https://pymisp.readthedocs.io/en/latest/)
 * PYMISP Pypi [Link](https://pypi.org/project/pymisp/)
 * MISP / PYMISC OPEN API Description[https://www.misp-project.org/openapi/]
+* MISP Administraion Guide[Link](https://www.circl.lu/doc/misp/administration/)
 
 ___
 
